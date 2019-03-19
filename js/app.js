@@ -279,9 +279,11 @@ function llenarTablero(){
 
 function terminarJuego(){
     $('div.panel-tablero, div.time').effect('fold');
-	$('h1.main-titulo').addClass('title-over')
-		.text('Juego Terminado');
-	$('div.score, div.moves, div.panel-score').width('100%');
+    let titulo = $('<h2 >Juego Finalizado</h2>');
+    titulo.attr('style','font-family: gameFont; text-align: center;color:#DCFF0E;')
+    titulo.attr('class','segundo-titulo')
+	$('h1.main-titulo').after(titulo);
+	$('div.score, div.moves, div.panel-score, segundo-titulo').width('100%');
 	
 }
 
@@ -299,7 +301,6 @@ function iniciarJuego(){
 }
 
 $(function(){
-    let movimientos = 0;
     cambiarColorBlanco($('.main-titulo')[0]);
     iniciarJuego();
 })
